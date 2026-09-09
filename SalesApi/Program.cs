@@ -37,8 +37,6 @@ sales.MapPost("/", (SaleCreate create, ISalesRepository repo, HttpContext http) 
 sales.MapPut("/{id:int}", (int id, SaleUpdate update, ISalesRepository repo) =>
 {
     var ok = repo.Update(id, update);
-    
-    
     return ok ? Results.NoContent() : Results.NotFound();
 });
 
